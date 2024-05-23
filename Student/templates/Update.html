@@ -1,0 +1,121 @@
+<!-- update.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Update Student{% endblock %}
+
+{% block content %}
+<script src="{% static 'JS/update.js' %}"></script>
+
+
+<div class="update">
+    <h1 class="Header1">Edit Student Data</h1>
+    <div class="searchUpdate">
+        <input type="text" id="search-id" placeholder="Enter Student ID">
+        <button id="search-button"><img class="searchUpdate" src="{% static 'Images/search.png' %}" alt="Search"></button>
+    </div>
+    <div class="unique-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="studentName">Name</th>
+                    <th class="studentId">ID</th>
+                    <th class="gpa">GPA</th>
+                    <th class="dob">DOB</th>
+                    <th class="gender">Gender</th>
+                    <th class="level">Level</th>
+                    <th class="status">Status</th>
+                    <th class="department">Department</th>
+                    <th class="email">Email</th>
+                    <th class="mobile">Mobile</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Table body element to be populated with student data -->
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.ID }}</td>
+                    <td>{{ student.GPA }}</td>
+                    <td>{{ student.birthDate }}</td>
+                    <td>{{ student.gender }}</td>
+                    <td>{{ student.level }}</td>
+                    <td>{{ student.status }}</td>
+                    <td>{{ student.department }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ student.mobilePhone }}</td>
+                    <td><button class="edit-button" data-student-id="{{ student.ID }}">Edit</button></td>
+                    <td><button class="delete-button" data-student-id="{{ student.ID }}">Delete</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <form id="update-form"  style="display: none;">
+            <h1 style="text-align: center;">Student Information</h1>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" id="studentName" required pattern="[A-Za-z\s]+"></td>
+                </tr>
+                <tr>
+                    <td>ID:</td>
+                    <td><input type="text" id="studentId" disabled></td>
+                </tr>
+                <tr>
+                    <td>GPA:</td>
+                    <td><input type="number" id="gpa" step="0.01" min="1" max="4"></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth:</td>
+                    <td><input type="date" id="dob"></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <select id="gender">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Level:</td>
+                    <td>
+                        <select id="level">
+                            <option value="1">Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
+                            <option value="4">Level 4</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td>
+                        <select id="status" name="status" value="Active">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Department:</td>
+                    <td><input type="text" id="department" disabled></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number:</td>
+                    <td><input type="tel" id="mobile" required pattern="01[0-9]{9}"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+{% endblock %}

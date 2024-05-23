@@ -1,0 +1,555 @@
+.special {
+
+    background-image: linear-gradient(to right, #553c9a, #ee4b2b, #00c2cb, #ff7f50, #553c9a);
+    color: lavender;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+    font-size: 50px;
+}
+
+
+.Header1{
+    margin: 80px 0 10px 0;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px black,
+    2px 2px 0px black,
+    3px 3px 0px black,
+    4px 4px 0px black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/*______________________________________navigation_bar_________________________________________________________*/
+
+.topnav {
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    border: 1px solid #222831;
+    position: fixed;
+    background-color: #333;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    left: 0px;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.topnav label {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: #09bec6;
+}
+
+.topnav a.active {
+    color: #FFFFFF;
+    background-color: #4b4a4a;
+    border-radius: 3px;
+
+}
+
+/*________________________________table&cont________________________________________________________________*/
+
+table {
+    border-spacing: 0;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+    border-radius: 0;
+  }
+  
+  th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  table tr:first-child {
+    background-color: #fff;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table tr:nth-child(even) td,
+  table tr:nth-child(odd) td {
+    border-radius: 0 0 5px 5px;
+  }
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+/*________________________________Switch________________________________________________________________*/
+
+.status-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.status-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.status-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: red;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.status-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.status-slider {
+    background-color: green;
+}
+
+input:checked+.status-slider:before {
+    transform: translateX(20px);
+}
+
+/*________________________________backStyle________________________________________________________________*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #333;
+    color: #FFFFFF;
+}
+
+img.background {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+
+img.backgroundS {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.header h2 {
+    text-align: center;
+}
+/*________________________________addStud________________________________________________________________*/
+
+#key{
+
+    background-color: #f8f1e9;
+    border: 1px solid #d3c0a7;
+    box-shadow: 3px 3px 5px #b9a88e;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: black;
+    box-shadow: -10px 0 50px -10px black, 10px 0 10px -50px black;
+
+
+}
+#parent{
+    margin: auto;
+    width: fit-content;
+    top: 50%;
+    margin-top: 3%;
+
+}
+/* label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+} */
+.addstudent{
+    margin: 40px 0 10px 0;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px lightgrey,
+    2px 2px 0px lightgrey,
+    3px 3px 0px lightgrey,
+    4px 4px 0px lightgrey;
+    text-align: center;
+    color: black;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b9a88e;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+
+}
+.submit{
+    background-color: #d3c0a7;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.submit:hover {
+    background-color: #b9a88e;
+}
+
+.date{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 50%;
+    border-radius: 25px;
+
+}
+#student-level{
+    font-size: 1.2em;
+    padding: 5px;
+    width: 150px;
+}
+#department{
+    font-size: 16px;
+    color: #333;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#department:hover{
+    background-color: #e6e6e6;
+}
+#department:focus {
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*________________________________Search________________________________________________________________*/
+
+/* Style for the body */
+#Search-Body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+ 
+/* Style for the top navigation bar */
+.unique-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+ 
+
+.display-container {
+    max-width: 1200px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+/* _______________________Search________________________ */
+.Search container {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px #333;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Style for the search box */
+.Search form{
+    width: 100%;
+    background-color: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.Search input[type="text"] {
+    padding: 8px;
+    width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+ 
+.Search {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+ 
+.SUBMIT {
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 15px;
+    background-color: #4779a9;
+    width: 80px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 10px;
+    display: flex;
+}
+ 
+.SUBMIT:hover {
+    background-color: #3a648b;
+}
+
+ 
+/* Style for the table */
+
+.TABLE {
+    width:60%;
+    margin-left: 20%;
+}
+
+/* .TABLE thead {
+    background-color: #4779a9;
+}
+
+.TABLE tbody {
+    background-color: #f2f2f2;
+}
+ 
+.TABLE th,
+.TABLE td {
+    padding: 10px;
+    text-align: center;
+}
+ 
+.TABLE th {
+    background-color: #4779a9;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+}
+
+.TABLE td {
+    font-size: 16px;
+    padding: 12px;
+    text-align: center;
+    height: 30px;
+    border-radius: 0%;
+}
+
+.TABLE tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.TABLE tr:nth-child(odd) {
+    background-color: #ddd;
+}
+
+.TABLE tr:hover {
+    background-color: #fff;
+} */
+
+  /*________________________________Update________________________________________________________________*/
+
+.update {
+    font-family: 'Montserrat';
+    margin: 20px;
+}
+
+.update img {
+    width: 25px;
+    height: 25px;
+    font-size: 100px;
+    color: blue;
+}
+
+.update button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.update input {
+    width: 200px;
+    padding: 5px;
+}
+
+.update table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.update th,td {
+    padding: 10px;
+    text-align: left;
+}
+
+.update th {
+    background-color: #4779a9;
+    color: #fff;
+}
+
+.update tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.update tr:hover {
+    background-color: #ddd;
+}
+
+.update form {
+    width: 500px;
+    margin: 20px auto;
+    border: 1px solid black;
+}
+
+.update form h1 {
+    text-align: center;
+}
+
+
+.searchUpdate {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+}
+
+.searchUpdate input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid #132666;
+    flex: 1;
+    background: #fff;
+    border-radius: 50px 0 0 50px;
+}
+
+.searchUpdate button {
+    width: 20%;
+    padding: 10px;
+    background: rgb(46, 45, 45);
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.searchUpdate button:hover {
+    background-color: #141415;
+}
+
+.searchUpdate button img {
+    width: 18px;
+    height: 18px;
+}

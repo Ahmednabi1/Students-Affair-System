@@ -1,0 +1,29 @@
+<!-- base.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <img class="background" src="{% static 'Images/DisplayWall.jpg' %}" alt="Books">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="topnav">
+        <label>Students Affairs</label>
+        <a href="/home">Home</a>
+        <a href="/add_student">Add a New Student</a>
+        <a href="/display_students">Display all Students</a>
+        <a href="/update_student">Update Student's Info</a>
+        <a href="/search_for_student">Search For a Student</a>
+    </div>
+    <br><br>
+
+    <!-- Content specific to each page -->
+    {% block content %}{% endblock %}
+
+    <!-- Add your common JavaScript files here -->
+</body>
+</html>

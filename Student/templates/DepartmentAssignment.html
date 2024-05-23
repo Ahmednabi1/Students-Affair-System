@@ -1,0 +1,42 @@
+<!-- DepartmentAssignmet.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Assign Your Department{% endblock %}
+
+{% block content %}
+	<h1 class="Header1">Department Assignment</h1>
+	<div class="unique-container">
+		<table class="TABLE">
+			<thead>
+				<tr>
+					<th>Student ID</th>
+					<th>Student Name</th>
+					<th>Department</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{ student.ID }}</td>
+					<td>{{ student.name }}</td>
+					<td>
+						<form method="POST" action="{% url 'department_details' student_id=student.ID %}">
+							{% csrf_token %}
+							<select name="department">
+								{% for department in departments %}
+									<option value="{{ department }}"
+											{% if student.department == department %}selected{% endif %}>
+										{{ department }}
+									</option>
+								{% endfor %}
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<br><br>
+		<input type="submit" class ="SUBMIT" value="Save" style="margin-left:45%">
+		</form>
+	</div>
+{% endblock %}
+

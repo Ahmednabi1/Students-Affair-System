@@ -1,0 +1,60 @@
+<!-- search.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search For a Student{% endblock %}
+
+{% block content %}
+
+<div class="Search">
+    <h1 class="Header1">Search For Active Students</h1>
+    <div id="Search-box">
+    <form method="POST" action="{% url 'search_for_student' %}">
+        {% csrf_token %}
+        <input type="text" placeholder="Enter Student Name..." name ="searched" id="SEARCH_NAME">
+        <input type="submit" value="Search" class="SUBMIT" id="searchButton">
+    </form>
+    </div>
+
+    <div class="unique-container">
+    {% if students %}
+        <table class="TABLE">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Level</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- loop through the students in django and make a row for them -->
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.ID }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.level }}</td>
+                    <td>
+                        {% if student.level >= 3 %}
+                            {% if student.department == "-" %}
+                                <a href="{% url 'department_details' student_id=student.ID %}">Assign Department</a>
+                            {% else %}
+                                <a href="{% url 'department_details' student_id=student.ID %}">{{ student.department }}</a>
+                            {% endif %}
+                        {% else %}
+                            Not Assigned Yet
+                        {% endif %}
+                    </td>                                                
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+    {% if request.method == "POST" %}
+        <h2>No Students Found</h2>
+        {% endif %}
+    {% endif %}    
+    </div>
+</div>
+
+{% endblock %}
